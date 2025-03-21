@@ -15,8 +15,29 @@ from django.contrib.auth import logout
 
 #from faker import Faker
 
+def HomeView(request):
+    template_name = 'risevow\index.html'
+    context = {
+    "characters": [
+                {
+                    "name": "Captain Waffles",
+                    "species": "Space Cat",
+                    "catchphrase": "To the Milky Way and beyond!",
+                    "skills": ["Laser eyes", "Zero-gravity purring", "Intergalactic diplomacy"]
+                },
+                {
+                    "name": "Sir Barksalot",
+                    "species": "Cybernetic Dog",
+                    "catchphrase": "Woof woof... engaged!",
+                    "skills": ["Super sniffing", "Fetch at light speed", "Bionic tail wag"]
+                },
+                {
+                    "name": "Professor Quokka",
+                    "species": "Mystical Quokka",
+                    "catchphrase": "Happiness is the key to the universe!",
+                    "skills": ["Quantum physics", "Cheeky grin", "Pocket-sized wisdom"]
+                }
+            ]
+            }
+    return render(request, template_name, context)
 
-# Create your views here.
-class HomeViews(View):
-    template_name="bloge/index.html"
-    reversed()

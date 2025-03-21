@@ -1,10 +1,12 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from risevow.views import home
 
 
-from .views import home
+
 
 
 urlspatterns = [
-    path('', home.HomeViews.as_view(), name="index")
+    path('', home.HomeView, name="index"),
+    path('', include('risevow.urls')),
 ]
